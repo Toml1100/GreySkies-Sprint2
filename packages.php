@@ -35,6 +35,22 @@ Rustic Wood and Delivery not available in May
             if($month == "January" and $set == "LayeredArch"){
                 echo '<p>Sorry ' . $set . ' not available ' . ' in ' . $month . '</p>';
             }
+            
+            if($month == "February" and $set == "ModernRound"){
+                echo '<p>Sorry ' . $set . ' not available ' . ' in ' . $month . '</p>';
+            }
+            
+            if($month == "March" and $set == "VintageMirror"){
+                echo '<p>Sorry ' . $set . ' not available ' . ' in ' . $month . '</p>';
+            }
+            
+            if($month == "April" and $set == "DarkWalnut"){
+                echo '<p>Sorry ' . $set . ' not available ' . ' in ' . $month . '</p>';
+            }
+            
+            if($month == "May" and $set == "RusticWood"){
+                echo '<p>Sorry ' . $set . ' not available ' . ' in ' . $month . '</p>';
+            }
 
         ?>
 
