@@ -84,62 +84,62 @@ Rustic Wood and Delivery not available in May
                         <?php
                         if($set == "DarkWalnut"){
                             // Full Set
-                            echo '<input type="radio" id="FullSet" name="package" value="FullSet">';
+                            echo '<input type="radio" id="FullSet" name="DarkWalnut" value="FullSet">';
                             echo '<label for="FullSet">Full Set</label><br>'; 
                             // No Seating
-                            echo '<input type="radio" id="NoSeating" name="package" value="NoSeating">';
+                            echo '<input type="radio" id="NoSeating" name="DarkWalnut" value="NoSeating">';
                             echo '<label for="NoSeating">No Seating</label><br>'; 
                             //Pick 4
-                            echo '<input type="radio" id="PickFour" name="package" value="PickFour">';
+                            echo '<input type="radio" id="PickFour" name="DarkWalnut" value="PickFour">';
                             echo '<label for="PickFour">Pick Four</label><br>'; 
 
                         }
                         elseif($set == "RusticWood"){
                             // Full Set
-                            echo '<input type="radio" id="FullSet" name="package" value="FullSet">';
+                            echo '<input type="radio" id="FullSet" name="RusticWood" value="FullSet">';
                             echo '<label for="FullSet">Full Set</label><br>'; 
                             // No Seating
-                            echo '<input type="radio" id="NoSeating" name="package" value="NoSeating">';
+                            echo '<input type="radio" id="NoSeating" name="RusticWood" value="NoSeating">';
                             echo '<label for="NoSeating">No Seating</label><br>'; 
                             //Pick 4
-                            echo '<input type="radio" id="PickFour" name="package" value="PickFour">';
+                            echo '<input type="radio" id="PickFour" name="RusticWood" value="PickFour">';
                             echo '<label for="PickFour">Pick Four</label><br>'; 
 
                         }
                         elseif($set == "LayeredArch"){
                              // Full Set
-                            echo '<input type="radio" id="FullSet" name="package" value="FullSet">';
+                            echo '<input type="radio" id="FullSet" name="LayeredArch" value="FullSet">';
                             echo '<label for="FullSet">Full Set</label><br>'; 
                             // Pick 6
-                            echo '<input type="radio" id="PickSix" name="package" value="PickSix">';
+                            echo '<input type="radio" id="PickSix" name="LayeredArch" value="PickSix">';
                             echo '<label for="PickSix">Pick Six</label><br>'; 
                             // Pick 4
-                            echo '<input type="radio" id="PickFour" name="package" value="PickFour">';
+                            echo '<input type="radio" id="PickFour" name="LayeredArch" value="PickFour">';
                             echo '<label for="PickFour">Pick Four</label><br>';                            
                         }
                         elseif($set == "ModernRound"){
                              // Full Set
-                            echo '<input type="radio" id="FullSet" name="package" value="FullSet">';
+                            echo '<input type="radio" id="FullSet" name="ModernRound" value="FullSet">';
                             echo '<label for="FullSet">Full Set</label><br>'; 
                             // Pick 6
-                            echo '<input type="radio" id="PickSix" name="package" value="PickSix">';
+                            echo '<input type="radio" id="PickSix" name="ModernRound" value="PickSix">';
                             echo '<label for="PickSix">Pick Six</label><br>'; 
                             // Pick 4
-                            echo '<input type="radio" id="PickFour" name="package" value="PickFour">';
+                            echo '<input type="radio" id="PickFour" name="ModernRound" value="PickFour">';
                             echo '<label for="PickFour">Pick Four</label><br>';                            
                         }
                         elseif($set == "VintageMirror"){
                             // Platinum
-                            echo '<input type="radio" id="Platinum" name="package" value="Platinum">';
+                            echo '<input type="radio" id="Platinum" name="VintageMirror" value="Platinum">';
                             echo '<label for="Platinum">Platinum</label><br>';
                             // Gold
-                            echo '<input type="radio" id="Gold" name="package" value="Gold">';
+                            echo '<input type="radio" id="Gold" name="VintageMirror" value="Gold">';
                             echo '<label for="Gold">Gold</label><br>'; 
                             // Pick 6
-                            echo '<input type="radio" id="PickSix" name="package" value="PickSix">';
+                            echo '<input type="radio" id="PickSix" name="VintageMirror" value="PickSix">';
                             echo '<label for="PickSix">Pick Six</label><br>'; 
                             // Pick 4
-                            echo '<input type="radio" id="PickFour" name="package" value="PickFour">';
+                            echo '<input type="radio" id="PickFour" name="VintageMirror" value="PickFour">';
                             echo '<label for="PickFour">Pick Four</label><br>';                            
                         }
                         
@@ -154,11 +154,6 @@ Rustic Wood and Delivery not available in May
                 <div class="row">
 
                     <div class="text-center">
-                        <?php
-                            echo '<input type="hidden" name="WeddingDate" value=' . $weddingDate. '>'; 
-                            echo '<input type="hidden" name="Set" value=' . $set. '>';                      
-                        ?>
-
                         <input type="submit" id="submit" name="submit" value="submit">                        
                     </div>
 
