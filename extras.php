@@ -37,7 +37,13 @@ echo '</div>';
     <div class="row checkboxDiv">
         <div class="col-12 text-center">
             <?php
-            echo'<h1>Extras for '.$set.' on '.$weddingDate.' with '.$package.'</h1>';
+            echo '<h1>For you:</h1>';
+            echo '<p>Select anything you\'d like to add for '.$set.' on '.$weddingDate.' with the '.$package.' package.</p>';
+            
+            if ($month != "May") {
+                echo '<p>For an additional cost, we can even deliver to you.</p>';
+            }
+            
             ?>
         </div>
                 <?php
@@ -105,7 +111,7 @@ echo '</div>';
                 echo '<input type="hidden" name="Set" value='.$set.'>';
                 echo '<input type="hidden" name="Package" value='.$package.'>';
                 ?><br>
-                <input type="submit" id="checkAvailability" name="submit" value="submit order"></button>
+                <input type="submit" id="checkAvailability" name="submit" value="submit order">
                 </div>
             </form>
             </div>

@@ -24,32 +24,29 @@
 
             <form name="SetForm" action="packages.php" method="GET">
                 <div class="row">
-                    <div class="col-12 col-md-6">
+                    <div class="col-0 col-md-2"></div>
+                    <div class="col-12 col-md-4">
                         <h1>Pick your set</h1>
-                    
-                        <input type="radio" id="DarkWalnut" name="set" value="DarkWalnut">
-                        <label for="DarkWalnut">Dark Walnut</label><br>
-    
-                        <input type="radio" id="VintageMirror" name="set" value="VintageMirror">
-                        <label for="VintageMirror">Vintage Mirror</label><br>
-    
-                        <input type="radio" id="RusticWood" name="set" value="RusticWood">
-                        <label for="RusticWood">Rustic Wood</label><br>                 
-    
-                        <input type="radio" id="LayeredArch" name="set" value="LayeredArch">
-                        <label for="LayeredArch">Layered Arch</label><br>
-    
-                        <input type="radio" id="ModernRound" name="set" value="ModernRound">
-                        <label for="ModernRound">Modern Round</label><br>
+                            <input type="radio" id="rDarkWalnut" name="set" value="DarkWalnut">
+                            <label for="rDarkWalnut">Dark Walnut</label><br>
+                            <input type="radio" id="rVintageMirror" name="set" value="VintageMirror">
+                            <label for="rVintageMirror">Vintage Mirror</label><br>
+                            <input type="radio" id="rRusticWood" name="set" value="RusticWood">
+                            <label for="rRusticWood">Rustic Wood</label><br>
+                            <input type="radio" id="rLayeredArch" name="set" value="LayeredArch">
+                            <label for="rLayeredArch">Layered Arch</label><br>
+                            <input type="radio" id="rModernRound" name="set" value="ModernRound">
+                            <label for="rModernRound">Modern Round</label><br>
                     </div>
     
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-4">
                         <h1>Enter Wedding Date</h1>
                         
                         <!-- Make sure date is a future date  -->
                         <input type="date" id="WeddingDate" name="WeddingDate" value="2022-06-01">
                         
                     </div>
+                    <div class="col-0 col-md-2"></div>
                     <div class="col-2"></div>
     
                 </div>
@@ -59,7 +56,7 @@
                         
                     </div>
                     <div class="col-4">
-                        <input type="submit" id="submit" name="submit" value="submit">                        
+                        <input type="submit" id="checkAvailability" name="submit" value="Continue">                       
                     </div>
 
 
@@ -69,6 +66,6 @@
 
 
         </div>
-
+        <?php include "includes/footer.html" ?>
     </body>
 </html>

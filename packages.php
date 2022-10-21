@@ -164,7 +164,7 @@ Rustic Wood and Delivery not available in May
                             echo '<input type="hidden" name="Set" value=' . $set. '>';                      
                         ?>
 
-                        <input type="submit" id="submit" name="submit" value="submit">                        
+                        <input type="submit" id="checkAvailability" name="submit" value="Continue">                        
                     </div>
 
 
