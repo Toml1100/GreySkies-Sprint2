@@ -35,7 +35,7 @@ echo '</div>';
 <form name="ExtrasForm" action="reserve.php" method="GET">
 <div class="container-fluid">
     <div class="row checkboxDiv">
-        <div class="col-12">
+        <div class="col-12 text-center">
             <?php
             echo'<h1>Extras for '.$set.' on '.$weddingDate.' with '.$package.'</h1>';
             ?>
@@ -94,18 +94,18 @@ echo '</div>';
                 if ($month != "May") {
 
                     echo '<input type="checkbox" id="Delivery" name="Delivery" value="yes">';
-                    echo '<label for="Delivery">Delivery?<br><img class="img-fluid"  src="images/delivery.jpg" alt="Delivery Picture Option"></label>';
+                    echo '<label for="Delivery"><br><img class="img-fluid"  src="images/delivery.jpg" alt="Delivery Picture Option"><br>Delivery?</label>';
 
                 } else {
 
-                    echo 'Sorry, delivery is unavailable for this reservation<br><img class="img-fluid"  src="images/delivery.jpg" alt="Delivery Picture Option"></label>';
+                    echo '<br><img class="img-fluid"  src="images/delivery.jpg" alt="Delivery Picture Option"><br>Sorry, delivery is unavailable for this reservation :(</label>';
                 }
                 //hidden values to send before submitting this to reserve.php!
                 echo '<input type="hidden" name="WeddingDate" value='.$weddingDate. '>';
                 echo '<input type="hidden" name="Set" value='.$set.'>';
                 echo '<input type="hidden" name="Package" value='.$package.'>';
                 ?><br>
-                <input type="submit" id="submit" name="submit" value="submit">
+                <input type="submit" id="checkAvailability" name="submit" value="submit order"></button>
                 </div>
             </form>
             </div>
