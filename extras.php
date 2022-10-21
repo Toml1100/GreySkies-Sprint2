@@ -55,37 +55,37 @@ echo '</div>';
                 if ($month != "January")
                 {
                     echo '<div class="col-12 col-md-4">';
-                    echo '<input type="checkbox" id="HexagonArch" name="addon" value="HexagonArch">';
+                    echo '<input type="checkbox" id="HexagonArch" name="addon[]" value="HexagonArch">';
                     echo '<label for="HexagonArch"><img class="img-fluid" src="images/HexagonArch.jpg" alt="Hexagon Arch addon picture">Hexagon Arch</label>';
                     echo '</div>'; // end of col item
                 }
 
                 if ($month != "February") {
                     echo '<div class="col-12 col-md-4">';
-                    echo '<input type="checkbox" id="VintageCouch" name="addon" value="VintageCouch">';
+                    echo '<input type="checkbox" id="VintageCouch" name="addon[]" value="VintageCouch">';
                     echo '<label for="VintageCouch"><img class="img-fluid"  src="images/VintageCouch.jpg" alt="Vintage Couch Addon picture">Vintage Couch</label>';
                     echo '</div>'; // end of col item
                 }
 
                 if ($month != "March") {
                     echo '<div class="col-12 col-md-4">';
-                    echo '<input type="checkbox" id="WineJugs" name="addon" value="WineJugs">';
+                    echo '<input type="checkbox" id="WineJugs" name="addon[]" value="WineJugs">';
                     echo '<label for="WineJugs"><img class="img-fluid"  src="images/WineJugs.jpg" alt="XL Wine Jugs addon picture">xl wine jugs</label>';
                     echo '</div>'; // end of col item
                     echo '<div class="col-12 col-md-4">';
-                    echo '<input type="checkbox" id="AntiqueJugs" name="addon" value="AntiqueJugs">';
+                    echo '<input type="checkbox" id="AntiqueJugs" name="addon[]" value="AntiqueJugs">';
                     echo '<label for="AntiqueJugs"><img class="img-fluid"  src="images/AntiqueJugs.jpg" alt="Antique Gallon Jugs addon picture">Antique Gallon Jugs</label>';
                     echo '</div>'; // end of col item
                 }
 
                 if ($month != "April") {
                     echo '<div class="col-12 col-md-4">';
-                    echo '<input type="checkbox" id="ClearBall" name="addon" value="ClearBall">';
+                    echo '<input type="checkbox" id="ClearBall" name="addon[]" value="ClearBall">';
                     echo '<label for="ClearBall"><img class="img-fluid"  src="images/ClearBall.jpg" alt="Clear Antique Ball Jars addon picture">Clear Antique Ball Jars</label>';
                     echo '</div>'; // end of col item
 
                     echo '<div class="col-12 col-md-4">';
-                    echo '<input type="checkbox" id="BlueBall" name="addon" value="BlueBall">';
+                    echo '<input type="checkbox" id="BlueBall" name="addon[]" value="BlueBall">';
                     echo '<label for="BlueBall"><img class="img-fluid"  src="images/BlueBall.jpg" alt="Blue Antique Ball Jars">Blue Antique Ball Jars</label>';
                     echo '</div>'; // end of col item
                 }
@@ -99,7 +99,7 @@ echo '</div>';
                 echo '<div class="col-12 text-center">';
                 if ($month != "May") {
 
-                    echo '<input type="checkbox" id="Delivery" name="Delivery" value="yes">';
+                    echo '<input type="checkbox" id="Delivery" name="addon[]" value="Delivery">';
                     echo '<label for="Delivery"><br><img class="img-fluid"  src="images/delivery.jpg" alt="Delivery Picture Option"><br>Delivery?</label>';
 
                 } else {
