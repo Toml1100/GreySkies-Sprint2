@@ -1,0 +1,22 @@
+#sets {
+    height:400px;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url(../images/Donnie+Rosie+Photo+1-9559.jpg);
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+h1 {
+    font-size:38px;
+    font-family:'Times New Roman', Times, serif;
+    color:#D5B6AE;
+    font-weight:bold;
+}
+
+h2 {
+    font-size:88px;
+    font-family:'Times New Roman', Times, serif;
+    font-style:italic;
+    color: white;
+    padding-top:30px;
+}
