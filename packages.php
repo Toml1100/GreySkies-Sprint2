@@ -44,133 +44,38 @@ Rustic Wood and Delivery not available in May
             
             //check if set is available
             if($month == "January" and $set == "LayeredArch"){
-                echo '<p>Sorry ' . $set . ' not available ' . ' in ' . $month . '</p>';
-                echo '<p>Press <a href="https://gray.greenriverdev.com/GreySkies-Sprint2/sets.html">Here</a> to select a diffrent option</p>';
+                echo '<h1>Sorry ' . $set . ' not available ' . ' in ' . $month . '</h1>';
+                echo '<h1>Press <a class="redirect" href="https://gray.greenriverdev.com/Sprint2">Here</a> to select a diffrent option</h1>';
 
             }
             
-            if($month == "February" and $set == "ModernRound"){
-                echo '<p>Sorry ' . $set . ' not available ' . ' in ' . $month . '</p>';
-                echo '<p>Press <a href="https://gray.greenriverdev.com/GreySkies-Sprint2/sets.html">Here</a> to select a diffrent option</p>';
+            elseif($month == "February" and $set == "ModernRound"){
+                echo '<h1>Sorry ' . $set . ' not available ' . ' in ' . $month . '</h1>';
+                echo '<h1>Press <a class="redirect" href="https://gray.greenriverdev.com/Sprint2">Here</a> to select a diffrent option</h1>';
             }
             
-            if($month == "March" and $set == "VintageMirror"){
-                echo '<p>Sorry ' . $set . ' not available ' . ' in ' . $month . '</p>';
-                echo '<p>Press <a href="https://gray.greenriverdev.com/GreySkies-Sprint2/sets.html">Here</a> to select a diffrent option</p>';                
+            elseif($month == "March" and $set == "VintageMirror"){
+                echo '<h1>Sorry ' . $set . ' not available ' . ' in ' . $month . '</h1>';
+                echo '<h1>Press <a class="redirect" href="https://gray.greenriverdev.com/Sprint2">Here</a> to select a diffrent option</h1>';                
             }
             
-            if($month == "April" and $set == "DarkWalnut"){
-                echo '<p>Sorry ' . $set . ' not available ' . ' in ' . $month . '</p>';
-                echo '<p>Press <a href="https://gray.greenriverdev.com/GreySkies-Sprint2/sets.html">Here</a> to select a diffrent option</p>';                
+            elseif($month == "April" and $set == "DarkWalnut"){
+                echo '<h1>Sorry ' . $set . ' not available ' . ' in ' . $month . '</h1>';
+                echo '<h1>Press <a class="redirect" href="https://gray.greenriverdev.com/Sprint2">Here</a> to select a diffrent option</h1>';                
             }
             
-            if($month == "May" and $set == "RusticWood"){
-                echo '<p>Sorry ' . $set . ' not available ' . ' in ' . $month . '</p>';
-                echo '<p>Press <a href="https://gray.greenriverdev.com/GreySkies-Sprint2/sets.html">Here</a> to select a diffrent option</p>';
+            elseif($month == "May" and $set == "RusticWood"){
+                echo '<h1>Sorry ' . $set . ' not available ' . ' in ' . $month . '</h1>';
+                echo '<h1>Press <a class="redirect" href="https://gray.greenriverdev.com/Sprint2">Here</a> to select a diffrent option</h1>';
+            }
+            
+            else{
+                include "includes/validPackages.php";
             }
 
-  
-        
-        
             ?>
         </div>
-        
-        <div class="container-fluid">
-            <div class="row">
-                <div class="text-center">
-                    
-                    <?php echo'<h1>' .$set.'</h1>'; ?>
-                </div>
-            </div>
-            <form name="SetForm" action="extras.php" method="GET">
-                <div class="row">
-                    <div class="text-center">
-                        <h1>Pick your Package</h1>
-                        <?php
-                        if($set == "DarkWalnut"){
-                            // Full Set
-                            echo '<input type="radio" id="FullSet" name="package" value="FullSet">';
-                            echo '<label for="FullSet">Full Set</label><br>'; 
-                            // No Seating
-                            echo '<input type="radio" id="NoSeating" name="package" value="NoSeating">';
-                            echo '<label for="NoSeating">No Seating</label><br>'; 
-                            //Pick 4
-                            echo '<input type="radio" id="PickFour" name="package" value="PickFour">';
-                            echo '<label for="PickFour">Pick Four</label><br>'; 
 
-                        }
-                        elseif($set == "RusticWood"){
-                            // Full Set
-                            echo '<input type="radio" id="FullSet" name="package" value="FullSet">';
-                            echo '<label for="FullSet">Full Set</label><br>'; 
-                            // No Seating
-                            echo '<input type="radio" id="NoSeating" name="package" value="NoSeating">';
-                            echo '<label for="NoSeating">No Seating</label><br>'; 
-                            //Pick 4
-                            echo '<input type="radio" id="PickFour" name="package" value="PickFour">';
-                            echo '<label for="PickFour">Pick Four</label><br>'; 
-
-                        }
-                        elseif($set == "LayeredArch"){
-                             // Full Set
-                            echo '<input type="radio" id="FullSet" name="package" value="FullSet">';
-                            echo '<label for="FullSet">Full Set</label><br>'; 
-                            // Pick 6
-                            echo '<input type="radio" id="PickSix" name="package" value="PickSix">';
-                            echo '<label for="PickSix">Pick Six</label><br>'; 
-                            // Pick 4
-                            echo '<input type="radio" id="PickFour" name="package" value="PickFour">';
-                            echo '<label for="PickFour">Pick Four</label><br>';                            
-                        }
-                        elseif($set == "ModernRound"){
-                             // Full Set
-                            echo '<input type="radio" id="FullSet" name="package" value="FullSet">';
-                            echo '<label for="FullSet">Full Set</label><br>'; 
-                            // Pick 6
-                            echo '<input type="radio" id="PickSix" name="package" value="PickSix">';
-                            echo '<label for="PickSix">Pick Six</label><br>'; 
-                            // Pick 4
-                            echo '<input type="radio" id="PickFour" name="package" value="PickFour">';
-                            echo '<label for="PickFour">Pick Four</label><br>';                            
-                        }
-                        elseif($set == "VintageMirror"){
-                            // Platinum
-                            echo '<input type="radio" id="Platinum" name="package" value="Platinum">';
-                            echo '<label for="Platinum">Platinum</label><br>';
-                            // Gold
-                            echo '<input type="radio" id="Gold" name="package" value="Gold">';
-                            echo '<label for="Gold">Gold</label><br>'; 
-                            // Pick 6
-                            echo '<input type="radio" id="PickSix" name="package" value="PickSix">';
-                            echo '<label for="PickSix">Pick Six</label><br>'; 
-                            // Pick 4
-                            echo '<input type="radio" id="PickFour" name="package" value="PickFour">';
-                            echo '<label for="PickFour">Pick Four</label><br>';                            
-                        }
-                        
-                        ?>
-
-    
-                    </div>
-    
-    
-                </div>
-    
-                <div class="row">
-
-                    <div class="text-center">
-                        <?php
-                            echo '<input type="hidden" name="WeddingDate" value=' . $weddingDate. '>'; 
-                            echo '<input type="hidden" name="Set" value=' . $set. '>';                      
-                        ?>
-
-                        <input type="submit" id="checkAvailability" name="submit" value="Continue">                        
-                    </div>
-
-
-                </div>
-            </form>
-        </div>
     <?php include "includes/footer.html"; ?>
     </body>
 </html>

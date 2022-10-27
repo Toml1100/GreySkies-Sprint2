@@ -23,23 +23,71 @@
         <div class="container-fluid">
 
             <form name="SetForm" action="packages.php" method="GET">
+                <div class="text-center"> 
+                    <h1>Pick Your Set</h1>
+                </div>
+                
                 <div class="row">
-                    <div class="col-0 col-md-2"></div>
+                    <!--<div class="col-0 col-md-2"></div>-->
+                    <!--<div class="col-12 col-md-4">-->
+                    <!--    <h1>Pick your set</h1>-->
+                    <!--        <input type="radio" id="rDarkWalnut" name="set" value="DarkWalnut">-->
+                    <!--        <label for="rDarkWalnut">Dark Walnut</label><br>-->
+                    <!--        <input type="radio" id="rVintageMirror" name="set" value="VintageMirror">-->
+                    <!--        <label for="rVintageMirror">Vintage Mirror</label><br>-->
+                    <!--        <input type="radio" id="rRusticWood" name="set" value="RusticWood">-->
+                    <!--        <label for="rRusticWood">Rustic Wood</label><br>-->
+                    <!--        <input type="radio" id="rLayeredArch" name="set" value="LayeredArch">-->
+                    <!--        <label for="rLayeredArch">Layered Arch</label><br>-->
+                    <!--        <input type="radio" id="rModernRound" name="set" value="ModernRound">-->
+                    <!--        <label for="rModernRound">Modern Round</label><br>-->
+                    <!--</div>-->
                     <div class="col-12 col-md-4">
-                        <h1>Pick your set</h1>
+                         <label>
+                            <h1 class="text-center">Dark Walnut</h1>
                             <input type="radio" id="rDarkWalnut" name="set" value="DarkWalnut">
-                            <label for="rDarkWalnut">Dark Walnut</label><br>
-                            <input type="radio" id="rVintageMirror" name="set" value="VintageMirror">
-                            <label for="rVintageMirror">Vintage Mirror</label><br>
-                            <input type="radio" id="rRusticWood" name="set" value="RusticWood">
-                            <label for="rRusticWood">Rustic Wood</label><br>
-                            <input type="radio" id="rLayeredArch" name="set" value="LayeredArch">
-                            <label for="rLayeredArch">Layered Arch</label><br>
-                            <input type="radio" id="rModernRound" name="set" value="ModernRound">
-                            <label for="rModernRound">Modern Round</label><br>
+                            <img class="img-fluid rounded-3" src="images/darkWalnutscaled.jpeg">                       
+                        </label>                       
                     </div>
-    
+                    
                     <div class="col-12 col-md-4">
+                         <label>
+                            <h1 class="text-center">Vintage Mirror</h1>
+                            <input type="radio" id="rVintageMirror" name="set" value="VintageMirror">
+                            <img class="img-fluid rounded" src="images/VintageMirrorScaled.jpeg">
+                        </label>                       
+                    </div>
+                    
+                    <div class="col-12 col-md-4">
+                         <label>
+                            <h1 class="text-center">Rustic Wood</h1>                            
+                            <input type="radio" id="rRusticWood" name="set" value="RusticWood">
+                            <img class="img-fluid rounded" src="images/rusticwoodFullScaled.jpeg">
+                        </label>                        
+                    </div>
+                    
+                    <div class="col-12 col-md-4">
+                         <label>
+                            <h1 class="text-center">Layered Arch</h1>                            
+                            <input type="radio" id="rLayeredArch" name="set" value="LayeredArch">
+                            <img class="img-fluid rounded" src="images/layeredArchScaled.jpeg">
+                        </label>                         
+                    </div>
+                    
+                    <div class="col-12 col-md-4">
+                         <label>
+                            <h1 class="text-center">Modern Round</h1>                            
+                            <input type="radio" id="rModernRound" name="set" value="ModernRound">
+                            <img class="img-fluid rounded" src="images/ModernRoundScaled.jpeg">
+                        </label>                         
+                    </div>
+                    
+                    <div class="col-12 col-md-4">
+                      
+                    </div>
+                    
+                    <!--<div class="col-12 col-md-4">-->
+                    <div class="text-center">
                         <h1>Enter Wedding Date</h1>
                         
                         <!-- Make sure date is a future date  -->
@@ -55,7 +103,11 @@
                     <div class="col-4">
                         
                     </div>
-                    <div class="col-4">
+                    <!--<div class="col-4">-->
+                    <!--    <input type="submit" id="checkAvailability" name="submit" value="Continue">                       -->
+                    <!--</div>-->
+                    
+                    <div class="text-center">
                         <input type="submit" id="checkAvailability" name="submit" value="Continue">                       
                     </div>
 
