@@ -76,7 +76,8 @@ Rustic Wood and Delivery not available in May
             ?>
         </div>
 
-    <?php include "includes/footer.html"; ?>
-    </body>
+    <?php include "includes/ordercrumbs.php"; ?>
+    <?php include "includes/footer.php"; ?>
+</body>
 </html>
 

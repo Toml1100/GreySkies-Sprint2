@@ -117,6 +117,7 @@ echo '</div>';
             </div>
         </div>
 
-    <?php include "includes/footer.html"; ?>
+    <?php include "includes/ordercrumbs.php"; ?>
+    <?php include "includes/footer.php"; ?>
 </body>
 </html>

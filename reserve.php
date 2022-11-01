@@ -62,7 +62,7 @@ function test_input($data) {
     <div class="row  text-center">
         <h1>Info</h1>
     </div>
-    <form name="reserveForm" action="vardump.php" method="POST">
+    <form name="reserveForm" action="confirm.php" method="POST">
 <?php
     $p="00.00";
     
@@ -189,12 +189,14 @@ function test_input($data) {
         echo '<input type="hidden" name="WeddingDate" value='.$weddingDate. '>';
         echo '<input type="hidden" name="Set" value='.$Set.'>';
         echo '<input type="hidden" name="Package" value='.$package.'>';
+        echo '<input type="hidden" name="Price" value='.$p.'>';
         ?>
         <div class="text-center">
             <input type="submit" id="checkAvailability" name="submit" value="Reserve">
         </div>
     </div>
 </form>
-<?php include "includes/footer.html"; ?>
+    <?php include "includes/ordercrumbs.php"; ?>
+    <?php include "includes/footer.php"; ?>
 </body>
 </html>

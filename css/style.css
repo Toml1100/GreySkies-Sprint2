@@ -25,18 +25,18 @@
 	text-align:center;
 }
 
-a.redirect {
+.redirect {
     background-color: #D5B6AE;
 }
 a:link {
     text-transform:uppercase;
     text-decoration:none;
-    color: white;
+    color: #D5B6AE;
 }
 a:visited {
     text-transform:uppercase;
     text-decoration:none;
-    color: white;
+    color: #D5B6AE;
 }
 a:hover {
     text-transform:uppercase;
@@ -45,6 +45,16 @@ a:hover {
     color: white;
 }
 a:active {
+    text-transform:uppercase;
+    text-decoration:none;
+    color: white;
+}
+#header a:link, #footer a:link{
+    text-transform:uppercase;
+    text-decoration:none;
+    color: white;
+}
+#header a:visited, #footer a:link {
     text-transform:uppercase;
     text-decoration:none;
     color: white;
