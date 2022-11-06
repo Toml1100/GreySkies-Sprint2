@@ -22,9 +22,17 @@ Submits to vardump.php (or similar page) that displays name, email, phone, set, 
 $name = $email = $phone =$price ="";
 $Set = $_GET['Set'];
 $weddingDate = $_GET['WeddingDate'];
-$package = $_GET['Package'];
 $addon = array($_GET['addon']);
 
+$package = empty($_GET['packageUpgrade']) ? $_GET['Package'] : $_GET['packageUpgrade'];
+
+
+/*$setUpgrade = $_get['setUpgrade'];
+if (!empty($setUpgrade)) {
+    $package=$_get['setUpgrade'];
+}else{
+    $package = $_GET['Package'];
+} */
 echo '<div id="'.$Set.'" class="text-center">'; /* header begins */
 include "includes/header.html";
 echo '<h2>Reserve</h2>';
@@ -110,13 +118,13 @@ function test_input($data) {
     if($Set == "LayeredArch" and $package == "PickFour"){
         $p = $p + 699;
     }
-    if($Set == "" and $package == "FullSet"){
+    if($Set == "ModernRound" and $package == "FullSet"){
         $p = $p + 799;
     }
-    if($Set == "" and $package == "PickSix"){
+    if($Set == "ModernRound" and $package == "PickSix"){
         $p = $p + 699;
     }
-    if($Set == "" and $package == "PickFour"){
+    if($Set == "ModernRound" and $package == "PickFour"){
         $p = $p + 599;
     }
     if($Set == "DarkWalnut" and $package == "FullSet"){

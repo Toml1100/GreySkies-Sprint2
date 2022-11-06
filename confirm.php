@@ -22,6 +22,15 @@
         $set = $_POST['Set'];
         $package = $_POST['Package'];
         $price = $_POST['Price'];
+        $vintageCouchStatus = $_POST['VintageCouch'];
+        $hexagonArchStatus = $_POST['HexagonArch'];
+        $wineJugsStatus = $_POST['WineJugs'];
+        $antiqueJugsStatus = $_POST['AntiqueJugs'];
+        $clearBallStatus = $_POST['ClearBall'];
+        $blueBallStatus = $_POST['BlueBall'];
+        $deliveryStatus = $_POST['Delivery'];
+
+        $addonString = '';
         ?>
   <?php echo '<p>Thank you for your reservation of the '. $set . ' set '.$package.' package for your wedding on ' . $weddingDate . ' the Walnut Ridge Reservation team will be contacing you shortly to confirm your reservation. Your reservation information listed here will also be emailed to you.</p>';?>
   
@@ -29,7 +38,43 @@
     <?php echo '<p><b>Wedding Date:</b> ' . $weddingDate . '</p>'?>
     <?php echo '<p><b>Set: </b>' . $set . '</p>'?>
     <?php echo '<p><b>Package: </b>' . $package . '</p>'?>
-    <?php echo '<p><b>Add-ons:</b></p>'?>
+    
+    <!--["HexagonArch"]=> string(11) "HexagonArch" ["VintageCouch"]=> string(12) "VintageCouch" ["WineJugs"]=> string(8) "WineJugs" ["AntiqueJugs"]=> string(11) "AntiqueJugs" ["ClearBall"]=> string(9) "ClearBall" ["BlueBall"]=> string(8) "BlueBall" ["Delivery"]=> string(8) "Delivery"-->
+    
+    <?php 
+
+        
+        if($vintageCouchStatus != null){
+            $addonString = $addonString . $vintageCouchStatus . ", ";
+        }
+        
+        if($hexagonArchStatus != null){
+            $addonString = $addonString . $hexagonArchStatus . ", ";
+        }
+        
+        if($wineJugsStatus != null){
+            $addonString = $addonString . $wineJugsStatus . ", ";
+        }
+        
+        if($antiqueJugsStatus != null){
+            $addonString = $addonString . $antiqueJugsStatus . ", ";
+        }
+        
+        if($clearBallStatus != null){
+            $addonString = $addonString . $clearBallStatus . ", ";
+        }
+        
+        if($blueBallStatus != null){
+            $addonString = $addonString . $blueBallStatus . ", ";
+        }
+        
+        if($deliveryStatus != null){
+            $addonString = $addonString . $deliveryStatus ;
+        }
+    
+        echo '<p><b>Add-ons: </b>'. $addonString .' </p>'
+        
+        ?>
     <?php echo '<p><b>Total Price:</b> $' . $price . ' </p>'?>
 
     <?php include "includes/ordercrumbs.php"; ?>

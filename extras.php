@@ -39,7 +39,6 @@ echo '</div>';
             <?php
             echo '<h1>For you:</h1>';
             echo '<p>Select anything you\'d like to add for '.$set.' on '.$weddingDate.' with the '.$package.' package.</p>';
-            
             if ($month != "May") {
                 echo '<p>For an additional cost, we can even deliver to you.</p>';
             }
@@ -47,6 +46,124 @@ echo '</div>';
             ?>
         </div>
                 <?php
+            /*
+                dark walnut
+                    full set	299
+                    no seating	245
+                    pick four	199
+                    
+                rustic wood	
+                    full set	299
+                    no seating	245
+                    pick four	199
+                    
+                vintage mirror
+                    platinum	849
+                    gold		799
+                    pick six	649
+                    pick four	599
+                    
+                layered arch
+                    full set	849
+                    pick six	749
+                    pick four	699
+                    
+                modern round
+                    full set	799
+                    pick six	699
+                    pick four	599
+            */
+            switch($set)
+            {
+                case 'DarkWalnut';
+                    if ($package == "PickFour") {
+                        echo '<div class="col-12 col-md-4">';
+                        echo '<input type="checkbox" id="NoSeating" name="packageUpgrade" value="noSeating">';
+                        echo '<label for="NoSeating"><img class="img-fluid"  src="images/darkWalnutscaled.jpeg" alt="No Seating Signs">Upgrade to No Seating $245</label>';
+                        echo '</div>'; // end of col item
+                    }
+                    if ($package == "NoSeating" || $package == "PickFour") {
+                        echo '<div class="col-12 col-md-4">';
+                        echo '<input type="checkbox" id="FullSet" name="packageUpgrade" value="FullSet">';
+                        echo '<label for="FullSet"><img class="img-fluid"  src="images/darkWalnutscaled.jpeg" alt="Full Set Signs">Upgrade to Full Set $299</label>';
+                        echo '</div>'; // end of col item
+                    }
+                    break;
+                case 'RusticWood';
+                    if ($package == "PickFour") {
+                        echo '<div class="col-12 col-md-4">';
+                        echo '<input type="checkbox" id="NoSeating" name="packageUpgrade" value="noSeating">';
+                        echo '<label for="NoSeating"><img class="img-fluid"  src="images/rusticwoodFullScaled.jpeg" alt="No Seating Signs">Upgrade to No Seating $245</label>';
+                        echo '</div>'; // end of col item
+                    }
+                    if ($package == "NoSeating" || $package == "PickFour") {
+                        echo '<div class="col-12 col-md-4">';
+                        echo '<input type="checkbox" id="FullSet" name="packageUpgrade" value="FullSet">';
+                        echo '<label for="FullSet"><img class="img-fluid"  src="images/rusticwoodFullScaled.jpeg" alt="Full Set Signs">Upgrade to Full Set $299</label>';
+                        echo '</div>'; // end of col item
+                    }
+                    break;
+                    /*
+                    vintage mirror
+                    platinum	849
+                    gold		799
+                    pick six	649
+                    pick four	599*/
+                case 'VintageMirror';
+                    if ($package == "PickFour") {
+                        echo '<div class="col-12 col-md-4">';
+                        echo '<input type="checkbox" id="PickSix" name="packageUpgrade" value="PickSix">';
+                        echo '<label for="PickSix"><img class="img-fluid"  src="images/VintageMirrorScaled.jpeg" alt="Pick Six Signs">Upgrade to Pick Six $649</label>';
+                        echo '</div>'; // end of col item
+                    }
+                    if ($package == "PickSix" || $package == "PickFour") {
+                        echo '<div class="col-12 col-md-4">';
+                        echo '<input type="checkbox" id="Gold" name="packageUpgrade" value="Gold">';
+                        echo '<label for="Gold"><img class="img-fluid"  src="images/VintageMirrorScaled.jpeg" alt="Gold Sign Package">Upgrade to Gold Package $799</label>';
+                        echo '</div>'; // end of col item
+                    }
+                    if ($package == "PickSix" || $package == "PickFour" || $package == "Gold") {
+                        echo '<div class="col-12 col-md-4">';
+                        echo '<input type="checkbox" id="Platinum" name="packageUpgrade" value="Platinum">';
+                        echo '<label for="Platinum"><img class="img-fluid"  src="images/VintageMirrorScaled.jpeg" alt="Platinum Sign Package">Upgrade to Platinum Package $849</label>';
+                        echo '</div>'; // end of col item
+                    }
+                    if ($package == "")
+                    break;
+                case 'LayeredArch';
+                    if ($package == "PickFour") {
+                        echo '<div class="col-12 col-md-4">';
+                        echo '<input type="checkbox" id="PickSix" name="packageUpgrade" value="PickSix">';
+                        echo '<label for="PickSix"><img class="img-fluid"  src="images/layeredArchScaled.jpeg" alt="Pick Six Signs">Upgrade to Pick Six $749</label>';
+                        echo '</div>'; // end of col item
+                    }
+                    if ($package == "NoSeating" || $package == "PickFour") {
+                        echo '<div class="col-12 col-md-4">';
+                        echo '<input type="checkbox" id="FullSet" name="packageUpgrade" value="FullSet">';
+                        echo '<label for="FullSet"><img class="img-fluid"  src="images/layeredArchScaled.jpeg" alt="Full Set Signs">Upgrade to Full Set $849</label>';
+                        echo '</div>'; // end of col item
+                    }
+                    break;
+                case 'ModernRound';
+                    if ($package == "PickFour") {
+                        echo '<div class="col-12 col-md-4">';
+                        echo '<input type="checkbox" id="PickSix" name="packageUpgrade" value="PickSix">';
+                        echo '<label for="PickSix"><img class="img-fluid"  src="images/ModernRoundScaled.jpeg" alt="Pick Six Signs">Upgrade to Pick Six $699</label>';
+                        echo '</div>'; // end of col item
+                    }
+                    if ($package == "PickSix" || $package == "PickFour") {
+                        echo '<div class="col-12 col-md-4">';
+                        echo '<input type="checkbox" id="FullSet" name="packageUpgrade" value="FullSet">';
+                        echo '<label for="FullSet"><img class="img-fluid"  src="images/ModernRoundScaled.jpeg" alt="Full Set Signs">Upgrade to Full Set $799</label>';
+                        echo '</div>'; // end of col item
+                    }
+                    break;
+                default;
+                    echo 'Oops, you should go <a href="sets.php">back and select a set</a>...';
+                    break;
+            }
+        echo '</div>';
+        echo '<div class="row checkboxDiv">';
                 /* Hexagon Arch not available in January
                  * Couch not available in February
                  * Jugs not available in March
@@ -56,37 +173,37 @@ echo '</div>';
                 {
                     echo '<div class="col-12 col-md-4">';
                     echo '<input type="checkbox" id="HexagonArch" name="addon[]" value="HexagonArch">';
-                    echo '<label for="HexagonArch"><img class="img-fluid" src="images/HexagonArch.jpg" alt="Hexagon Arch addon picture">Hexagon Arch</label>';
+                    echo '<label for="HexagonArch"><img class="img-fluid" src="images/HexagonArch.jpg" alt="Hexagon Arch addon picture">Hexagon Arbor $350</label>';
                     echo '</div>'; // end of col item
                 }
 
                 if ($month != "February") {
                     echo '<div class="col-12 col-md-4">';
                     echo '<input type="checkbox" id="VintageCouch" name="addon[]" value="VintageCouch">';
-                    echo '<label for="VintageCouch"><img class="img-fluid"  src="images/VintageCouch.jpg" alt="Vintage Couch Addon picture">Vintage Couch</label>';
+                    echo '<label for="VintageCouch"><img class="img-fluid"  src="images/VintageCouch.jpg" alt="Vintage Couch Addon picture">Vintage Couch $99</label>';
                     echo '</div>'; // end of col item
                 }
 
                 if ($month != "March") {
                     echo '<div class="col-12 col-md-4">';
                     echo '<input type="checkbox" id="WineJugs" name="addon[]" value="WineJugs">';
-                    echo '<label for="WineJugs"><img class="img-fluid"  src="images/WineJugs.jpg" alt="XL Wine Jugs addon picture">xl wine jugs</label>';
+                    echo '<label for="WineJugs"><img class="img-fluid"  src="images/WineJugs.jpg" alt="XL Wine Jugs addon picture">xl wine jugs $20</label>';
                     echo '</div>'; // end of col item
                     echo '<div class="col-12 col-md-4">';
                     echo '<input type="checkbox" id="AntiqueJugs" name="addon[]" value="AntiqueJugs">';
-                    echo '<label for="AntiqueJugs"><img class="img-fluid"  src="images/AntiqueJugs.jpg" alt="Antique Gallon Jugs addon picture">Antique Gallon Jugs</label>';
+                    echo '<label for="AntiqueJugs"><img class="img-fluid"  src="images/AntiqueJugs.jpg" alt="Antique Gallon Jugs addon picture">Antique Gallon Jugs $4</label>';
                     echo '</div>'; // end of col item
                 }
 
                 if ($month != "April") {
                     echo '<div class="col-12 col-md-4">';
                     echo '<input type="checkbox" id="ClearBall" name="addon[]" value="ClearBall">';
-                    echo '<label for="ClearBall"><img class="img-fluid"  src="images/ClearBall.jpg" alt="Clear Antique Ball Jars addon picture">Clear Antique Ball Jars</label>';
+                    echo '<label for="ClearBall"><img class="img-fluid"  src="images/ClearBall.jpg" alt="Clear Antique Ball Jars addon picture">Clear Antique Ball Jars (50) $30</label>';
                     echo '</div>'; // end of col item
 
                     echo '<div class="col-12 col-md-4">';
                     echo '<input type="checkbox" id="BlueBall" name="addon[]" value="BlueBall">';
-                    echo '<label for="BlueBall"><img class="img-fluid"  src="images/BlueBall.jpg" alt="Blue Antique Ball Jars">Blue Antique Ball Jars</label>';
+                    echo '<label for="BlueBall"><img class="img-fluid"  src="images/BlueBall.jpg" alt="Blue Antique Ball Jars">Blue Antique Ball Jars (25) $30</label>';
                     echo '</div>'; // end of col item
                 }
 
