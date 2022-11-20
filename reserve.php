@@ -23,16 +23,16 @@ $name = $email = $phone =$price ="";
 $Set = $_GET['Set'];
 $weddingDate = $_GET['WeddingDate'];
 $addon = array($_GET['addon']);
-
+$AntiqueJugsQty = $_GET['AntiqueJugsQty'];
+$WineJugsQty = $_GET['WineJugsQty'];
 $package = empty($_GET['packageUpgrade']) ? $_GET['Package'] : $_GET['packageUpgrade'];
-
-
 /*$setUpgrade = $_get['setUpgrade'];
 if (!empty($setUpgrade)) {
     $package=$_get['setUpgrade'];
 }else{
     $package = $_GET['Package'];
 } */
+
 echo '<div id="'.$Set.'" class="text-center">'; /* header begins */
 include "includes/header.html";
 echo '<h2>Reserve</h2>';
@@ -83,8 +83,20 @@ function test_input($data) {
        $addon = $_GET['addon'];
     
        foreach ($addon as $addon=>$value) {
-             echo "Addon : ".$value."<br />";
-             echo '<input type="hidden" name="'.$value.'" value='.$value.'>';
+            if ($value == "WineJugs")
+            {
+                 echo "Addon : ".$value." - ".$WineJugsQty."<br />";
+                 echo '<input type="hidden" name="'.$value.'" value='.$value.'>';
+            }
+            else if ($value == "AntiqueJugs")
+            {
+                 echo "Addon : ".$value." - ".$AntiqueJugsQty."<br />";
+                 echo '<input type="hidden" name="'.$value.'" value='.$value.'>';
+            }
+            else {
+                 echo "Addon : ".$value."<br />";
+                 echo '<input type="hidden" name="'.$value.'" value='.$value.'>';
+            }
              
              if($value=="HexagonArch"){
                 $p = $p + 350;
@@ -93,10 +105,10 @@ function test_input($data) {
                 $p = $p + 99 ;
              }
              if($value=="WineJugs"){
-                $p = $p + 20  ;
+                $p = $p + 20*$WineJugsQty;
              }
              if($value=="AntiqueJugs"){
-                $p = $p + 4 ;
+                $p = $p + 4*$AntiqueJugsQty;
              }
              if($value=="ClearBall"){
                 $p = $p + 30 ;
@@ -193,8 +205,9 @@ function test_input($data) {
 
     <div class="row">
         <?php
-        
-        echo '<input type="hidden" name="WeddingDate" value='.$weddingDate. '>';
+        echo '<input type="hidden" name="AntiqueJugsQty" value='.$AntiqueJugsQty.'>';
+        echo '<input type="hidden" name="WineJugsQty" value='.$WineJugsQty.'>';
+        echo '<input type="hidden" name="WeddingDate" value='.$weddingDate.'>';
         echo '<input type="hidden" name="Set" value='.$Set.'>';
         echo '<input type="hidden" name="Package" value='.$package.'>';
         echo '<input type="hidden" name="Price" value='.$p.'>';

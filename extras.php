@@ -36,15 +36,8 @@ echo '</div>';
 <div class="container-fluid">
     <div class="row checkboxDiv">
         <div class="col-12 text-center">
-            <?php
-            echo '<h1>For you:</h1>';
-            echo '<p>Select anything you\'d like to add for '.$set.' on '.$weddingDate.' with the '.$package.' package.</p>';
-            if ($month != "May") {
-                echo '<p>For an additional cost, we can even deliver to you.</p>';
-            }
-            
-            ?>
-        </div>
+            <h1>For you:</h1>
+            </div>
                 <?php
             /*
                 dark walnut
@@ -73,6 +66,7 @@ echo '</div>';
                     pick six	699
                     pick four	599
             */
+            
             switch($set)
             {
                 case 'DarkWalnut';
@@ -103,12 +97,6 @@ echo '</div>';
                         echo '</div>'; // end of col item
                     }
                     break;
-                    /*
-                    vintage mirror
-                    platinum	849
-                    gold		799
-                    pick six	649
-                    pick four	599*/
                 case 'VintageMirror';
                     if ($package == "PickFour") {
                         echo '<div class="col-12 col-md-4">';
@@ -128,7 +116,6 @@ echo '</div>';
                         echo '<label for="Platinum"><img class="img-fluid"  src="images/VintageMirrorScaled.jpeg" alt="Platinum Sign Package">Upgrade to Platinum Package $849</label>';
                         echo '</div>'; // end of col item
                     }
-                    if ($package == "")
                     break;
                 case 'LayeredArch';
                     if ($package == "PickFour") {
@@ -162,8 +149,15 @@ echo '</div>';
                     echo 'Oops, you should go <a href="sets.php">back and select a set</a>...';
                     break;
             }
-        echo '</div>';
-        echo '<div class="row checkboxDiv">';
+            echo '</div>';
+            echo '<div class="row checkboxDiv">';
+            echo '<div class="col-12 text-center">';
+            echo '<h1>Addons</h1>';
+            echo '<p>Select anything you\'d like to add for '.$set.' on '.$weddingDate.' with the '.$package.' package.</p>';
+            if ($month != "May") {
+                echo '<p>For an additional cost, we can even deliver to you.</p>';
+            }
+            echo '</div>';
                 /* Hexagon Arch not available in January
                  * Couch not available in February
                  * Jugs not available in March
@@ -187,11 +181,11 @@ echo '</div>';
                 if ($month != "March") {
                     echo '<div class="col-12 col-md-4">';
                     echo '<input type="checkbox" id="WineJugs" name="addon[]" value="WineJugs">';
-                    echo '<label for="WineJugs"><img class="img-fluid"  src="images/WineJugs.jpg" alt="XL Wine Jugs addon picture">xl wine jugs $20</label>';
+                    echo '<label for="WineJugs"><img class="img-fluid"  src="images/WineJugs.jpg" alt="XL Wine Jugs addon picture">xl wine jugs $20<input type="number" name="WineJugsQty"></input></label>';
                     echo '</div>'; // end of col item
                     echo '<div class="col-12 col-md-4">';
                     echo '<input type="checkbox" id="AntiqueJugs" name="addon[]" value="AntiqueJugs">';
-                    echo '<label for="AntiqueJugs"><img class="img-fluid"  src="images/AntiqueJugs.jpg" alt="Antique Gallon Jugs addon picture">Antique Gallon Jugs $4</label>';
+                    echo '<label for="AntiqueJugs"><img class="img-fluid"  src="images/AntiqueJugs.jpg" alt="Antique Gallon Jugs addon picture">Antique Gallon Jugs $4<input type="number" name="AntiqueJugsQty"></input></label>';
                     echo '</div>'; // end of col item
                 }
 
