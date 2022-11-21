@@ -4,7 +4,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/admin.css">
     <title></title>
+
 </head>
 <body>
 <table class="table">
@@ -36,12 +38,12 @@
         echo '<td scope="col">'. $phone .'</td>';
         echo '<td scope="col">'. $email .'</td></tr>';
     }
-    
-
-           
-
- 
     ?>
+    
+    <form name="admin_logout" action="admin.php" method="POST" class="login_form">
+    <input name="password" type="hidden" value="123">
+    <input type="hidden" name="username" value="admin">
+    <input type="submit" id="logout" name="submit" value="submit">
     
 
     <!--?>-->

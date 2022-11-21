@@ -105,10 +105,10 @@ function test_input($data) {
                 $p = $p + 99 ;
              }
              if($value=="WineJugs"){
-                $p = $p + 20*$WineJugsQty;
+                $p = $p + 20 * $WineJugsQty;
              }
              if($value=="AntiqueJugs"){
-                $p = $p + 4*$AntiqueJugsQty;
+                $p = $p + 4 * $AntiqueJugsQty;
              }
              if($value=="ClearBall"){
                 $p = $p + 30 ;

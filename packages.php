@@ -34,45 +34,30 @@ Rustic Wood and Delivery not available in May
         ?>
         <div class="text-center">
         <?php 
-            
+            require '../../db.php';
 
             
             // check what month wedding date is
             $timestamp = strtotime($weddingDate);
             $month = date('F',$timestamp);
             
-            
+            //#################################################################
             //check if set is available
-            if($month == "January" and $set == "LayeredArch"){
-                echo '<h1>Sorry ' . $set . ' not available ' . ' in ' . $month . '</h1>';
-                echo '<h1>Press <a class="redirect" href="https://gray.greenriverdev.com/Sprint2">Here</a> to select a diffrent option</h1>';
-
+            if(checkSet($set, $weddingDate) >= 2 and ($set == "DarkWalnut" || $set == "RusticWood" || $set == "VintageMirror"))
+            {
+                 echo '<h1>ERROR MORE THAN 2 Sorry ' . $set . ' not available ' . ' for this day in ' . $month . '</h1>';
+                 echo '<h1>Press <a class="redirect" href="https://gray.greenriverdev.com/Sprint4">Here</a> to select a different option :(</h1>';
             }
             
-            elseif($month == "February" and $set == "ModernRound"){
-                echo '<h1>Sorry ' . $set . ' not available ' . ' in ' . $month . '</h1>';
-                echo '<h1>Press <a class="redirect" href="https://gray.greenriverdev.com/Sprint2">Here</a> to select a diffrent option</h1>';
-            }
-            
-            elseif($month == "March" and $set == "VintageMirror"){
-                echo '<h1>Sorry ' . $set . ' not available ' . ' in ' . $month . '</h1>';
-                echo '<h1>Press <a class="redirect" href="https://gray.greenriverdev.com/Sprint2">Here</a> to select a diffrent option</h1>';                
-            }
-            
-            elseif($month == "April" and $set == "DarkWalnut"){
-                echo '<h1>Sorry ' . $set . ' not available ' . ' in ' . $month . '</h1>';
-                echo '<h1>Press <a class="redirect" href="https://gray.greenriverdev.com/Sprint2">Here</a> to select a diffrent option</h1>';                
-            }
-            
-            elseif($month == "May" and $set == "RusticWood"){
-                echo '<h1>Sorry ' . $set . ' not available ' . ' in ' . $month . '</h1>';
-                echo '<h1>Press <a class="redirect" href="https://gray.greenriverdev.com/Sprint2">Here</a> to select a diffrent option</h1>';
+            elseif(checkSet($set, $weddingDate) >= 1 and ($set == "ModernRound" || $set == "LayeredArch"))
+            {
+                echo '<h1>ERROR MORE THAN 1 Sorry ' . $set . ' not available ' . ' for this day in ' . $month . '</h1>';
+                echo '<h1>Press <a class="redirect" href="https://gray.greenriverdev.com/Sprint4">Here</a> to select a different option :(</h1>';
             }
             
             else{
                 include "includes/validPackages.php";
             }
-
             ?>
         </div>
 

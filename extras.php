@@ -18,9 +18,11 @@ Submits to reserve.php
 
 <body>
 <?php
-$set = $_GET['Set'];
-$weddingDate = $_GET['WeddingDate'];
-$package = $_GET['package'];
+    include "../../db.php";
+
+    $set = $_GET['Set'];
+    $weddingDate = $_GET['WeddingDate'];
+    $package = $_GET['package'];
 
 //from previous page to have a month to test displaying it from
 $timestamp = strtotime($weddingDate);
@@ -39,33 +41,6 @@ echo '</div>';
             <h1>For you:</h1>
             </div>
                 <?php
-            /*
-                dark walnut
-                    full set	299
-                    no seating	245
-                    pick four	199
-                    
-                rustic wood	
-                    full set	299
-                    no seating	245
-                    pick four	199
-                    
-                vintage mirror
-                    platinum	849
-                    gold		799
-                    pick six	649
-                    pick four	599
-                    
-                layered arch
-                    full set	849
-                    pick six	749
-                    pick four	699
-                    
-                modern round
-                    full set	799
-                    pick six	699
-                    pick four	599
-            */
             
             switch($set)
             {
@@ -154,54 +129,52 @@ echo '</div>';
             echo '<div class="col-12 text-center">';
             echo '<h1>Addons</h1>';
             echo '<p>Select anything you\'d like to add for '.$set.' on '.$weddingDate.' with the '.$package.' package.</p>';
-            if ($month != "May") {
-                echo '<p>For an additional cost, we can even deliver to you.</p>';
-            }
+            echo '<p>For an additional cost, we can even deliver to you.</p>';
             echo '</div>';
-                /* Hexagon Arch not available in January
-                 * Couch not available in February
-                 * Jugs not available in March
-                 * Jars not available in April
-                 * Delivery not available in May */
-                if ($month != "January")
-                {
-                    echo '<div class="col-12 col-md-4">';
-                    echo '<input type="checkbox" id="HexagonArch" name="addon[]" value="HexagonArch">';
-                    echo '<label for="HexagonArch"><img class="img-fluid" src="images/HexagonArch.jpg" alt="Hexagon Arch addon picture">Hexagon Arbor $350</label>';
-                    echo '</div>'; // end of col item
-                }
+            if (checkExtra('HexagonArch', $weddingDate) < 1)
+            {
+                echo '<div class="col-12 col-md-4">';
+                echo '<input type="checkbox" id="HexagonArch" name="addon[]" value="HexagonArch">';
+                echo '<label for="HexagonArch"><img class="img-fluid" src="images/HexagonArch.jpg" alt="Hexagon Arch addon picture">Hexagon Arbor $350</label>';
+                echo '</div>'; // end of col item
+            }
 
-                if ($month != "February") {
-                    echo '<div class="col-12 col-md-4">';
-                    echo '<input type="checkbox" id="VintageCouch" name="addon[]" value="VintageCouch">';
-                    echo '<label for="VintageCouch"><img class="img-fluid"  src="images/VintageCouch.jpg" alt="Vintage Couch Addon picture">Vintage Couch $99</label>';
-                    echo '</div>'; // end of col item
-                }
+            if (checkExtra('VintageCouch', $weddingDate) < 1) {
+                echo '<div class="col-12 col-md-4">';
+                echo '<input type="checkbox" id="VintageCouch" name="addon[]" value="VintageCouch">';
+                echo '<label for="VintageCouch"><img class="img-fluid"  src="images/VintageCouch.jpg" alt="Vintage Couch Addon picture"> Vintage Couch $99</label>';
+                echo '</div>'; // end of col item
+            }
 
-                if ($month != "March") {
-                    echo '<div class="col-12 col-md-4">';
-                    echo '<input type="checkbox" id="WineJugs" name="addon[]" value="WineJugs">';
-                    echo '<label for="WineJugs"><img class="img-fluid"  src="images/WineJugs.jpg" alt="XL Wine Jugs addon picture">xl wine jugs $20<input type="number" name="WineJugsQty"></input></label>';
-                    echo '</div>'; // end of col item
-                    echo '<div class="col-12 col-md-4">';
-                    echo '<input type="checkbox" id="AntiqueJugs" name="addon[]" value="AntiqueJugs">';
-                    echo '<label for="AntiqueJugs"><img class="img-fluid"  src="images/AntiqueJugs.jpg" alt="Antique Gallon Jugs addon picture">Antique Gallon Jugs $4<input type="number" name="AntiqueJugsQty"></input></label>';
-                    echo '</div>'; // end of col item
-                }
+            if (checkExtra('WineJugs', $weddingDate) < 1) {
+                echo '<div class="col-12 col-md-4">';
+                echo '<input type="checkbox" id="WineJugs" name="addon[]" value="WineJugs">';
+                echo '<label for="WineJugs"><img class="img-fluid"  src="images/WineJugs.jpg" alt="XL Wine Jugs addon picture">xl wine jugs $20<input type="number" name="WineJugsQty"></input></label>';
+                echo '</div>'; // end of col item
+            }
+            
+            if (checkExtra('AntiqueJugs', $weddingDate) < 1) {
+                echo '<div class="col-12 col-md-4">';
+                echo '<input type="checkbox" id="AntiqueJugs" name="addon[]" value="AntiqueJugs">';
+                echo '<label for="AntiqueJugs"><img class="img-fluid"  src="images/AntiqueJugs.jpg" alt="Antique Gallon Jugs addon picture">Antique Gallon Jugs $4<input type="number" name="AntiqueJugsQty"></input></label>';
+                echo '</div>'; // end of col item
+            }
 
-                if ($month != "April") {
-                    echo '<div class="col-12 col-md-4">';
-                    echo '<input type="checkbox" id="ClearBall" name="addon[]" value="ClearBall">';
-                    echo '<label for="ClearBall"><img class="img-fluid"  src="images/ClearBall.jpg" alt="Clear Antique Ball Jars addon picture">Clear Antique Ball Jars (50) $30</label>';
-                    echo '</div>'; // end of col item
+            if (checkExtra('ClearBall', $weddingDate) < 1) {
+                echo '<div class="col-12 col-md-4">';
+                echo '<input type="checkbox" id="ClearBall" name="addon[]" value="ClearBall">';
+                echo '<label for="ClearBall"><img class="img-fluid"  src="images/ClearBall.jpg" alt="Clear Antique Ball Jars addon picture">Clear Antique Ball Jars (50) $30</label>';
+                echo '</div>'; // end of col item
+            }
+            
+            if (checkExtra('BlueBall', $weddingDate) < 1) {
+                echo '<div class="col-12 col-md-4">';
+                echo '<input type="checkbox" id="BlueBall" name="addon[]" value="BlueBall">';
+                echo '<label for="BlueBall"><img class="img-fluid"  src="images/BlueBall.jpg" alt="Blue Antique Ball Jars">Blue Antique Ball Jars (25) $30</label>';
+                echo '</div>'; // end of col item
+            }
 
-                    echo '<div class="col-12 col-md-4">';
-                    echo '<input type="checkbox" id="BlueBall" name="addon[]" value="BlueBall">';
-                    echo '<label for="BlueBall"><img class="img-fluid"  src="images/BlueBall.jpg" alt="Blue Antique Ball Jars">Blue Antique Ball Jars (25) $30</label>';
-                    echo '</div>'; // end of col item
-                }
-
-                ?>
+            ?>
             </div>
             <div class="row checkboxDiv">
                 <?php

@@ -91,7 +91,7 @@
                         <h1>Enter Wedding Date</h1>
                         
                         <!-- Make sure date is a future date  -->
-                        <input type="date" id="WeddingDate" name="WeddingDate" value="2022-06-01">
+                        <input type="date" id="WeddingDate" name="WeddingDate" value="<?php date("Y-m-d"); ?>">
                         
                     </div>
                     <div class="col-0 col-md-2"></div>

@@ -26,6 +26,8 @@
 
              <h1>Thank you for your order!</h1>
             <?php $weddingDate = $_POST['WeddingDate'];
+                $name = $_POST['name'];
+                $phone = $_POST['phone'];
                 $email = $_POST['email'];
                 $set = $_POST['Set'];
                 $package = $_POST['Package'];
@@ -41,6 +43,7 @@
                 $antiqueJugsQ = $_POST['AntiqueJugsQty'];
                 $addonString = '';
                 ?>
+
           <?php echo '<p>Thank you for your reservation of the '. $set . ' set '.$package.' package for your wedding on ' . $weddingDate . ' the Walnut Ridge Reservation team will be contacing you shortly to confirm your reservation. Your reservation information listed here will also be emailed to you.</p>';?>
           
           <h3>Reservation Info:</h3>
@@ -55,37 +58,86 @@
                 
                 if($vintageCouchStatus != null){
                     $addonString = $addonString . "Vintage Couch" . ", ";
+                    $VintageCouch = 1;
+                }
+                else {
+                    $VintageCouch = 0;
                 }
                 
                 if($hexagonArchStatus != null){
                     $addonString = $addonString . "Hexagon Arch" . ", ";
+                    $HexagonArch = 1;
+                }
+                else {
+                    $HexagonArch = 0;
                 }
                 
                 if($wineJugsStatus != null){
                     $addonString = $addonString . "XL Wine Jugs" . '(x'.$wineJugsQ.')'. ", ";
+                    $wineJugsQ = intval($wineJugsQ);
+                }
+                else {
+                    $wineJugsQ = 0;
                 }
                 
                 if($antiqueJugsStatus != null){
                     $addonString = $addonString . "Antique Gallon Jugs" . '(x'.$antiqueJugsQ.')'.", ";
+                    $antiqueJugsQ = intval($antiqueJugsQ);
+                }
+                else {
+                    $antiqueJugsQ = 0;
                 }
                 
                 if($clearBallStatus != null){
                     $addonString = $addonString . "Clear Antique Ball Jars" . ", ";
+                    $ClearBall = 1;
+                }
+                else {
+                    $ClearBall = 0;
                 }
                 
                 if($blueBallStatus != null){
                     $addonString = $addonString . "Blue Antique Ball Jars" . ", ";
+                    $BlueBall = 1;
+                }
+                else {
+                    $BlueBall = 0;
                 }
                 
                 if($deliveryStatus != null){
                     $addonString = $addonString . "Delivery" ;
+                    $Delivery = 1;
+                }
+                else {
+                    $Delivery = 0;
                 }
             
                 echo '<p><b>Add-ons: </b>'. $addonString .' </p>'
                 
                 ?>
             <?php echo '<p><b>Total Price:</b> $' . $price . ' </p>'?>
-        
+            <?php
+                require '../../db.php';
+                
+                if ((checkSet($set, $weddingDate) < 1 and ($set == "ModernRound" || $set == "LayeredArch")) || (checkSet($set, $weddingDate) < 2 and ($set == "DarkWalnut" || $set == "RusticWood" || $set == "VintageMirror")))
+                {
+                    $sql = "INSERT INTO `Order`(`FirstName`, `Email`, `Phone`, `WeddingDate`, `Wedding_Set`, `Package`, `HexagonArch`, `VintageCouch`, `WineJugs`, `AntiqueJugs`, `ClearBall`, `BlueBall`, `Delivery`, `Price`) VALUES ('$name', '$email', '$phone', '$weddingDate', '$set', '$package', $HexagonArch, $VintageCouch, $wineJugsQ, $antiqueJugsQ, $ClearBall, $BlueBall, $Delivery, $price)";
+                    
+                    if ($cnxn->query($sql) === TRUE) {
+                        echo '<div class="col-12 text-center">';
+                        echo 'Congratulations! Your order has been submitted for review!<br><br>';
+                        echo '</div>';
+                    } else {
+                        echo '<div class="col-12 text-center">';
+                        echo "Error: ".$sql."<br>".$cnxn->error;
+                        echo '</div>';
+                    }
+                } else {
+                 echo '<h1>We\'re so sorry! ' . $set . ' not available ' . ' on ' . $weddingDate . ' Someone might have JUST beaten you to it!</h1>';
+                 echo '<h1>Press <a class="redirect" href="https://gray.greenriverdev.com/Sprint4">Here</a> to select a different set or date.</h1>';
+                }
+
+            ?>
                 <?php include "includes/ordercrumbs.php"; ?>
         </body>
         </div>
