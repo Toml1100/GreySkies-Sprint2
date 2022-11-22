@@ -9,7 +9,7 @@
     <title></title>
 </head>
     <body>
-    
+
         <?php
 
         $password = $_POST['admin_password'];
@@ -22,7 +22,7 @@
             include 'includes/login.php';
         }
         ?>
-        
+
         <!--Password protect this page: user: admin, password: admin-->
         <!--Once logged in, show the upcoming reservations, including:-->
         <!--Date, Name, Set, Phone, Email-->

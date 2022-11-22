@@ -37,34 +37,7 @@ echo '<div id="'.$Set.'" class="text-center">'; /* header begins */
 include "includes/header.html";
 echo '<h2>Reserve</h2>';
 echo '</div>'; //header end
-/*
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["name"])) {
-        $nameErr = "Name is required";
-    } else {
-        $name = test_input($_POST["name"]);
-        // check if name only contains letters and whitespace
-        if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
-            $nameErr = "Only letters and white space allowed";
-        }
-    }
 
-    if (empty($_POST["email"])) {
-        $emailErr = "Email is required";
-    } else {
-        $email = test_input($_POST["email"]);
-        // check if e-mail address is well-formed
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $emailErr = "Invalid email format";
-        }
-    }
-function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-
-}*/
 
 ?>
     <div class="row  text-center">
@@ -85,12 +58,12 @@ function test_input($data) {
        foreach ($addon as $addon=>$value) {
             if ($value == "WineJugs")
             {
-                 echo "Addon : ".$value." - ".$WineJugsQty."<br />";
+                 echo "Addon : ".$value." x".$WineJugsQty."<br />";
                  echo '<input type="hidden" name="'.$value.'" value='.$value.'>';
             }
             else if ($value == "AntiqueJugs")
             {
-                 echo "Addon : ".$value." - ".$AntiqueJugsQty."<br />";
+                 echo "Addon : ".$value." x".$AntiqueJugsQty."<br />";
                  echo '<input type="hidden" name="'.$value.'" value='.$value.'>';
             }
             else {
@@ -185,6 +158,71 @@ function test_input($data) {
         
         Phone: <input type="tel" name="phone" value="<?php echo $phone;?>" required>
     </div>
+    
+    
+
+    // <?php
+    //****************************************************************************
+    //     //Hi Teach can you tell me why this validation is not working correctly 
+    //****************************************************************************
+    //     if ($_SERVER["REQUEST_METHOD"] == "POST") 
+    //     {
+    //     if (empty($_POST["name"])) 
+    //     {
+    //         $nameErr = "Name is required";
+    //     } 
+    //     else if(!empty($_POST["name"]))
+    //     {
+    //         $name = test_input($_POST["name"]);
+    //         // check if name only contains letters and whitespace
+    //         if (preg_match("/^[a-zA-Z-' ]*$/", $name)==0) 
+    //         {
+    //             $nameErr = "Only letters and white space allowed";
+    //         }
+    //     }
+        
+    //     if (empty($_POST["email"])) 
+    //     {
+    //         $emailErr = "Email is required";
+    //     } 
+    //     else if(!empty($_POST["email"]))
+    //     {
+    //         $email = test_input($_POST["email"]);
+    //         // check if e-mail address is well-formed
+    //         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
+    //         {
+    //             $emailErr = "Invalid email format";
+    //         }
+    //     }
+    //     if (empty($_POST["phone"])) 
+    //     {
+    //         $phoneErr = "phone is required";
+    //     } 
+    //     else if(!empty($_POST["phone"]))
+    //     {
+    //         $phone = test_input($_POST["phone"]);
+    //         if(!preg_match('/^[0-9]{10}+$/', $phone)) 
+    //         {
+                
+    //         } 
+    //         else 
+    //         {
+    //         echo " Invalid Phone Number";
+    //         }
+            
+    //     }
+    
+    // }    
+    //     function test_input($data) 
+    //     {
+    //         $data = trim($data);
+    //         $data = stripslashes($data);
+    //         $data = htmlspecialchars($data);
+    //         return $data;
+    //     }
+   
+
+    // ?>
     <div class="text-center">
         
         
