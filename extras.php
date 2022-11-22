@@ -149,14 +149,14 @@ echo '</div>';
             if (checkExtra('WineJugs', $weddingDate) < 1) {
                 echo '<div class="col-12 col-md-4">';
                 echo '<input type="checkbox" id="WineJugs" name="addon[]" value="WineJugs">';
-                echo '<label for="WineJugs"><img class="img-fluid"  src="images/WineJugs.jpg" alt="XL Wine Jugs addon picture">xl wine jugs $20<input type="number" name="WineJugsQty"></input></label>';
+                echo '<label for="WineJugs"><img class="img-fluid"  src="images/WineJugs.jpg" alt="XL Wine Jugs addon picture">xl wine jugs $20<input type="number" name="WineJugsQty" min="0"></input></label>';
                 echo '</div>'; // end of col item
             }
             
             if (checkExtra('AntiqueJugs', $weddingDate) < 1) {
                 echo '<div class="col-12 col-md-4">';
                 echo '<input type="checkbox" id="AntiqueJugs" name="addon[]" value="AntiqueJugs">';
-                echo '<label for="AntiqueJugs"><img class="img-fluid"  src="images/AntiqueJugs.jpg" alt="Antique Gallon Jugs addon picture">Antique Gallon Jugs $4<input type="number" name="AntiqueJugsQty"></input></label>';
+                echo '<label for="AntiqueJugs"><img class="img-fluid"  src="images/AntiqueJugs.jpg" alt="Antique Gallon Jugs addon picture">Antique Gallon Jugs $4<input type="number" name="AntiqueJugsQty" min="0"></input></label>';
                 echo '</div>'; // end of col item
             }
 

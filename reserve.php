@@ -179,11 +179,11 @@ function test_input($data) {
         ?>
     
     <div class="text-center ">
-        Name: <input type="text" name="name" value="<?php echo $name;?>">
+        Name: <input type="text" name="name" value="<?php echo $name;?>" required>
 
-        E-mail: <input type="text" name="email" value="<?php echo $email;?>">
+        E-mail: <input type="email" name="email" value="<?php echo $email;?>" required>
         
-        Phone: <input type="text" name="phone" value="<?php echo $phone;?>">
+        Phone: <input type="tel" name="phone" value="<?php echo $phone;?>" required>
     </div>
     <div class="text-center">
         

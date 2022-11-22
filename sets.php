@@ -91,7 +91,7 @@
                         <h1>Enter Wedding Date</h1>
                         
                         <!-- Make sure date is a future date  -->
-                        <input type="date" id="WeddingDate" name="WeddingDate" value="<?php date("Y-m-d"); ?>">
+                        <input type="date" id="WeddingDate" name="WeddingDate"  min="2022-11-21" value="<?php date("Y-m-d"); ?>">
                         
                     </div>
                     <div class="col-0 col-md-2"></div>
@@ -118,6 +118,7 @@
 
 
         </div>
+
     <?php include "includes/ordercrumbs.php"; ?>
     <?php include "includes/footer.php"; ?>
 </body>
