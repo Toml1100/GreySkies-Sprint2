@@ -30,7 +30,6 @@
         $set = $row['Wedding_Set'];
         $phone = $row['Phone'];
         $email = $row['Email'];
-        
 
         echo '<tr><td scope="col">'. $date .'</td>';
         echo '<td scope="col">'. $name .'</td>';
@@ -41,9 +40,9 @@
     ?>
     
     <form name="admin_logout" action="admin.php" method="POST" class="login_form">
-    <input name="password" type="hidden" value="123">
+    <input name="Password" type="hidden" value="123">
     <input type="hidden" name="username" value="admin">
-    <input type="submit" id="logout" name="submit" value="submit">
+    <input type="submit" id="logout" name="submit" value="LOGOUT">
     
 
     <!--?>-->
