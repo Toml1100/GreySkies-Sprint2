@@ -25,10 +25,16 @@
 
 
              <h1>Thank you for your order!</h1>
-            <?php $weddingDate = $_POST['WeddingDate'];
-                $name = $_POST['name'];
-                $phone = $_POST['phone'];
-                $email = $_POST['email'];
+            <?php 
+                require '../../db.php';
+
+                $weddingDate = $_POST['WeddingDate'];
+                $name = mysqli_real_escape_string($cnxn, $_POST['name']); // can be used to accept crappy data characters
+                $phone = mysqli_real_escape_string($cnxn, $_POST['phone']);
+                $email = mysqli_real_escape_string($cnxn, $_POST['email']);
+                $secondName = mysqli_real_escape_string($cnxn, $_POST['name2']);
+                $secondPhone = mysqli_real_escape_string($cnxn, $_POST['phone2']);
+                $secondEmail = mysqli_real_escape_string($cnxn, $_POST['email2']);
                 $set = $_POST['Set'];
                 $package = $_POST['Package'];
                 $price = $_POST['Price'];
@@ -54,7 +60,7 @@
             <!--["HexagonArch"]=> string(11) "HexagonArch" ["VintageCouch"]=> string(12) "VintageCouch" ["WineJugs"]=> string(8) "WineJugs" ["AntiqueJugs"]=> string(11) "AntiqueJugs" ["ClearBall"]=> string(9) "ClearBall" ["BlueBall"]=> string(8) "BlueBall" ["Delivery"]=> string(8) "Delivery"-->
             
             <?php 
-        
+                
                 
                 if($vintageCouchStatus != null){
                     $addonString = $addonString . "Vintage Couch" . ", ";
@@ -117,11 +123,11 @@
                 ?>
             <?php echo '<p><b>Total Price:</b> $' . $price . ' </p>'?>
             <?php
-                require '../../db.php';
                 
                 if ((checkSet($set, $weddingDate) < 1 and ($set == "ModernRound" || $set == "LayeredArch")) || (checkSet($set, $weddingDate) < 2 and ($set == "DarkWalnut" || $set == "RusticWood" || $set == "VintageMirror")))
-                {
-                    $sql = "INSERT INTO `Order`(`FirstName`, `Email`, `Phone`, `WeddingDate`, `Wedding_Set`, `Package`, `HexagonArch`, `VintageCouch`, `WineJugs`, `AntiqueJugs`, `ClearBall`, `BlueBall`, `Delivery`, `Price`) VALUES ('$name', '$email', '$phone', '$weddingDate', '$set', '$package', $HexagonArch, $VintageCouch, $wineJugsQ, $antiqueJugsQ, $ClearBall, $BlueBall, $Delivery, $price)";
+                {   
+                    //TODO ADD Second Name, Email, and Phone
+                    $sql = "INSERT INTO `Order`(`FirstName`, `Email`, `Phone`, `SecondName`, `SecondEmail`, `SecondPhone`, `WeddingDate`, `Wedding_Set`, `Package`, `HexagonArch`, `VintageCouch`, `WineJugs`, `AntiqueJugs`, `ClearBall`, `BlueBall`, `Delivery`, `Price`) VALUES ('$name', '$email', '$phone', '$secondName', '$secondEmail', '$secondPhone', '$weddingDate', '$set', '$package', $HexagonArch, $VintageCouch, $wineJugsQ, $antiqueJugsQ, $ClearBall, $BlueBall, $Delivery, $price)";
                     
                     if ($cnxn->query($sql) === TRUE) {
                         echo '<div class="col-12 text-center">';

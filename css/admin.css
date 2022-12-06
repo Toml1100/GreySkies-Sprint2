@@ -1,10 +1,6 @@
 .theUser{
-  color: blue; 
-  border: 1px dashed red;
-  width: 100%;
-  padding: 50px 50px;
-  margin: 50px 0;
-  box-sizing: border-box;
+  border: 1px dashed maroon;
+  width: 75%;
   background-color: #D5B6AE;
 }
 

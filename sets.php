@@ -45,7 +45,7 @@
                     <div class="col-12 col-md-4">
                          <label>
                             <h1 class="text-center">Dark Walnut</h1>
-                            <input type="radio" id="rDarkWalnut" name="set" value="DarkWalnut">
+                            <input type="radio" id="rDarkWalnut" name="set" value="DarkWalnut" required>
                             <img class="img-fluid rounded-3" src="images/darkWalnutscaled.jpeg">                       
                         </label>                       
                     </div>
@@ -53,7 +53,7 @@
                     <div class="col-12 col-md-4">
                          <label>
                             <h1 class="text-center">Vintage Mirror</h1>
-                            <input type="radio" id="rVintageMirror" name="set" value="VintageMirror">
+                            <input type="radio" id="rVintageMirror" name="set" value="VintageMirror" required>
                             <img class="img-fluid rounded" src="images/VintageMirrorScaled.jpeg">
                         </label>                       
                     </div>
@@ -61,7 +61,7 @@
                     <div class="col-12 col-md-4">
                          <label>
                             <h1 class="text-center">Rustic Wood</h1>                            
-                            <input type="radio" id="rRusticWood" name="set" value="RusticWood">
+                            <input type="radio" id="rRusticWood" name="set" value="RusticWood" required>
                             <img class="img-fluid rounded" src="images/rusticwoodFullScaled.jpeg">
                         </label>                        
                     </div>
@@ -69,7 +69,7 @@
                     <div class="col-12 col-md-4">
                          <label>
                             <h1 class="text-center">Layered Arch</h1>                            
-                            <input type="radio" id="rLayeredArch" name="set" value="LayeredArch">
+                            <input type="radio" id="rLayeredArch" name="set" value="LayeredArch" required>
                             <img class="img-fluid rounded" src="images/layeredArchScaled.jpeg">
                         </label>                         
                     </div>
@@ -77,7 +77,7 @@
                     <div class="col-12 col-md-4">
                          <label>
                             <h1 class="text-center">Modern Round</h1>                            
-                            <input type="radio" id="rModernRound" name="set" value="ModernRound">
+                            <input type="radio" id="rModernRound" name="set" value="ModernRound" required>
                             <img class="img-fluid rounded" src="images/ModernRoundScaled.jpeg">
                         </label>                         
                     </div>
@@ -91,7 +91,7 @@
                         <h1>Enter Wedding Date</h1>
                         
                         <!-- Make sure date is a future date  -->
-                        <input type="date" id="WeddingDate" name="WeddingDate"  min="2022-11-21" value="<?php date("Y-m-d"); ?>">
+                        <input type="date" id="WeddingDate" name="WeddingDate"  min="<?php echo date("Y-m-d"); ?>" value="<?php date("Y-m-d"); ?>" required>
                         
                     </div>
                     <div class="col-0 col-md-2"></div>

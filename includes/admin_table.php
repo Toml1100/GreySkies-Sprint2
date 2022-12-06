@@ -18,35 +18,53 @@
       <th scope="col">Set</th>
       <th scope="col">Phone</th>
       <th scope="col">Email</th>
+      <th scope="col">Name2</th>
+      <th scope="col">Phone2</th>
+      <th scope="col">Email2</th>
+      <th scope="col">Confirm</th>
+      <th scope="col">Cancel</th>
       <!--Date, Name, Set, Phone, Email-->
     </tr>
-  </thead>
+</thead>
     <?php
     require '/home/graygree/db.php';   
     $sql = "SELECT * FROM `Order` ORDER BY WeddingDate";
     $result = @mysqli_query($cnxn,$sql);
     while($row=mysqli_fetch_assoc($result)){
+        $orderId = $row['OrderId'];
         $date = $row['WeddingDate'];
         $name = $row['FirstName'];
         $set = $row['Wedding_Set'];
         $phone = $row['Phone'];
         $email = $row['Email'];
-
+        $isConfirmed = $row['isConfirmed'];
+        $email2 = $row['SecondEmail'];
+        $name2 = $row['SecondName'];
+        $phone2 = $row['SecondPhone'];
+        
         echo '<tr><td scope="col">'. $date .'</td>';
         echo '<td scope="col">'. $name .'</td>';
         echo '<td scope="col">'. $set .'</td>';
         echo '<td scope="col">'. $phone .'</td>';
-        echo '<td scope="col">'. $email .'</td></tr>';
+        echo '<td scope="col">'. $email .'</td>';
+        echo '<td scope="col">'. $name2 .'</td>';
+        echo '<td scope="col">'. $phone2 .'</td>';
+        echo '<td scope="col">'. $email2 .'</td>';
+        if ($isConfirmed) {
+            echo '<td scope="col">Confirmed</td>';
+        } else {
+            echo '<td scope="col"><a href="admin.php?conoid='.$orderId.'">Confirm</a></td>';
+        }
+        echo '<td scope="col"><a href="admin.php?canoid='.$orderId.'">Cancel</a></td>';
+        
+        echo '</tr>';
     }
     ?>
     
     <form name="admin_logout" action="admin.php" method="POST" class="login_form">
-    <input name="Password" type="hidden" value="123">
-    <input type="hidden" name="username" value="admin">
+    <input name="password" type="hidden" value="123">
+    <input type="hidden" name="username" value="logout">
     <input type="submit" id="logout" name="submit" value="LOGOUT">
-    
-
-    <!--?>-->
 
 </table>
 

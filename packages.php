@@ -46,13 +46,13 @@ Rustic Wood and Delivery not available in May
             if(checkSet($set, $weddingDate) >= 2 and ($set == "DarkWalnut" || $set == "RusticWood" || $set == "VintageMirror"))
             {
                  echo '<h1>ERROR MORE THAN 2 Sorry ' . $set . ' not available ' . ' for this day in ' . $month . '</h1>';
-                 echo '<h1>Press <a class="redirect" href="https://gray.greenriverdev.com/Sprint4">Here</a> to select a different option :(</h1>';
+                 echo '<h1>Press <a class="redirect" href="https://gray.greenriverdev.com/Sprint5">Here</a> to select a different option :(</h1>';
             }
             
             elseif(checkSet($set, $weddingDate) >= 1 and ($set == "ModernRound" || $set == "LayeredArch"))
             {
                 echo '<h1>ERROR MORE THAN 1 Sorry ' . $set . ' not available ' . ' for this day in ' . $month . '</h1>';
-                echo '<h1>Press <a class="redirect" href="https://gray.greenriverdev.com/Sprint4">Here</a> to select a different option :(</h1>';
+                echo '<h1>Press <a class="redirect" href="https://gray.greenriverdev.com/Sprint5">Here</a> to select a different option :(</h1>';
             }
             
             else{

@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,18 +14,54 @@
     <body>
 
         <?php
-
-        $password = $_POST['admin_password'];
-        $username = $_POST['username'];
+        require '../../db.php';
         
-        if ($password == 'admin' && $username == 'admin') {
+        if ($_POST['username'] == "logout") {
+            session_destroy();
+        }
+        $_SESSION['password'] = $_POST['admin_password'];
+        $_SESSION['username'] = $_POST['username'];
+        $conoid = $_GET['conoid'];
+        $canoid = $_GET['canoid'];
+        
+        if (isset($conoid)) {
+            $_SESSION['password'] = 'admin';
+            $_SESSION['username'] = 'admin';
+            $sql = "UPDATE `Order` SET `isConfirmed`=1 WHERE OrderId=$conoid";
+            if ($cnxn->query($sql) === TRUE) {
+                echo '<div class="col-12 text-center">';
+                echo 'Thanks! The order was confirmed.<br><br>';
+                echo '</div>';
+            } else {
+                echo '<div class="col-12 text-center">';
+                echo "Error: ".$sql."<br>".$cnxn->error;
+                echo '</div>';
+            }
+        }
+        if (isset($canoid)) {
+            $_SESSION['password'] = 'admin';
+            $_SESSION['username'] = 'admin';
+            $sql = "DELETE FROM `Order` WHERE OrderId=$canoid";
+            if ($cnxn->query($sql) === TRUE) {
+                echo '<div class="col-12 text-center">';
+                echo 'Thanks! The order was taken ENTIRELY out of the database...<br><br>';
+                echo '</div>';
+            } else {
+                echo '<div class="col-12 text-center">';
+                echo "Error: ".$sql."<br>".$cnxn->error;
+                echo '</div>';
+            }
+        }
+        
+        if ($_SESSION['password'] == 'admin' && $_SESSION['username'] == 'admin') {
             include 'includes/admin_table.php';
 
         } else {
             include 'includes/login.php';
         }
-        ?>
+        
 
+        ?>
         <!--Password protect this page: user: admin, password: admin-->
         <!--Once logged in, show the upcoming reservations, including:-->
         <!--Date, Name, Set, Phone, Email-->

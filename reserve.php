@@ -19,7 +19,7 @@ Submits to vardump.php (or similar page) that displays name, email, phone, set, 
 <body>
 <?php
 
-$name = $email = $phone =$price ="";
+$name = $email = $phone =$price = $name2= $email2 = $phone2="";
 $Set = $_GET['Set'];
 $weddingDate = $_GET['WeddingDate'];
 $addon = array($_GET['addon']);
@@ -152,11 +152,22 @@ echo '</div>'; //header end
         ?>
     
     <div class="text-center ">
-        Name: <input type="text" name="name" value="<?php echo $name;?>" required>
-
-        E-mail: <input type="email" name="email" value="<?php echo $email;?>" required>
         
-        Phone: <input type="tel" name="phone" value="<?php echo $phone;?>" required>
+        First Spouse Name: <input type="text" name="name" value="<?php echo $name;?>" required>
+
+        First Spouse E-mail: <input type="email" name="email" value="<?php echo $email;?>" required>
+        
+        First Spouse Phone: <input type="tel" name="phone" value="<?php echo $phone;?>" required>    
+           
+        </br>
+        
+        Second Spouse Name: <input type="text" name="name2" value="<?php echo $name2;?>" >
+
+        Second Spouse E-mail: <input type="email" name="email2" value="<?php echo $email2;?>" >
+        
+        Second Spouse Phone: <input type="tel" name="phone2" value="<?php echo $phone2;?>" >  
+           
+        
     </div>
     
     
